@@ -1,0 +1,28 @@
+<div class="affairs-manager">
+
+  <!-- Add / Edit Form -->
+  <div *ngIf="showForm()">
+    <input [(ngModel)]="newAffair.title" placeholder="Title" />
+    <input [(ngModel)]="newAffair.publishedAt" type="date" />
+    <input [(ngModel)]="newAffair.description" placeholder="Description" />
+    <input [(ngModel)]="newAffair.url" placeholder="URL" />
+    <button (click)="addAffair()">Save</button>
+    <button (click)="showAllAffairs()">Cancel</button>
+  </div>
+
+  <!-- News / Affairs List -->
+  <ul *ngIf="!showForm()">
+    <li *ngFor="let article of affairs(); let i = index">
+      <div class="affair-card">
+        <h3>{{ article.title }}</h3>
+        <p><em>{{ article.publishedAt | date:'mediumDate' }}</em></p>
+        <p>{{ article.description }}</p>
+        <div class="affair-actions">
+          <a *ngIf="article.url" [href]="article.url" target="_blank">Read More</a>
+          <button (click)="editAffair(article, i)">Edit</button>
+          <button (click)="deleteAffair(i)">Delete</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,66 @@
+<div class="users-container">
+  <h2>Users Management</h2>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <div class="user-form">
+    <h3>{{ editingUser ? 'Edit User' : 'Add New User' }}</h3>
+
+    <form (ngSubmit)="editingUser ? updateUser() : addUser()">
+      <div class="form-row">
+        <label>Name:</label>
+        <input type="text" [(ngModel)]="currentUser.name" name="name" placeholder="Enter Name" required />
+      </div>
+
+      <div class="form-row">
+        <label>Email:</label>
+        <input type="email" [(ngModel)]="currentUser.email" name="email" placeholder="Enter Email" required />
+      </div>
+
+      <div class="form-row">
+        <label>Mobile:</label>
+        <input type="text" [(ngModel)]="currentUser.mobile" name="mobile" placeholder="Enter Mobile" />
+      </div>
+
+      <div class="form-row">
+        <label>Department:</label>
+        <input type="text" [(ngModel)]="currentUser.department" name="department" placeholder="Enter Department" />
+      </div>
+
+      <div class="form-row">
+        <label>Role:</label>
+        <input type="text" [(ngModel)]="currentUser.role" name="role" placeholder="Enter Role" />
+      </div>
+
+      <div class="form-row">
+        <label>Work Location:</label>
+        <input type="text" [(ngModel)]="currentUser.work_location" name="work_location" placeholder="Enter Work Location" />
+      </div>
+
+      <button type="submit" class="btn">{{ editingUser ? 'Update User' : 'Add User' }}</button>
+      <button type="button" *ngIf="editingUser" class="btn cancel" (click)="cancelEdit()">Cancel</button>
+    </form>
+  </div>
+
+  <div class="users-table">
+    <h3>All Users</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Name</th><th>Email</th><th>Mobile</th>
+          <th>Department</th><th>Role</th><th>Work Location</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.id }}</td><td>{{ user.name }}</td><td>{{ user.email }}</td><td>{{ user.mobile }}</td>
+          <td>{{ user.department }}</td><td>{{ user.role }}</td><td>{{ user.work_location }}</td>
+          <td>
+            <button class="btn edit" (click)="editUser(user)">Edit</button>
+            <button class="btn delete" (click)="deleteUser(user.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

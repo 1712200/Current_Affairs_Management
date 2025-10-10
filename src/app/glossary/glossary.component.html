@@ -1,0 +1,21 @@
+<div class="glossary-page">
+  <h2>Glossary of Terms</h2>
+
+  <!-- Search bar -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search glossary..."
+      [(ngModel)]="searchQuery"
+      (input)="searchTerms()"
+    />
+  </div>
+
+  <!-- Glossary list -->
+  <div class="glossary-list">
+    <div class="glossary-card" *ngFor="let term of filteredTerms()">
+      <h3>{{ term.term }}</h3>
+      <p>{{ term.definition }}</p>
+    </div>
+  </div>
+</div>

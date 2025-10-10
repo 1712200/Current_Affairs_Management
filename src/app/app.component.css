@@ -1,0 +1,132 @@
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #343a40;
+  color: white;
+  height: 100vh;
+  position: fixed;
+  left: -220px; /* hidden by default */
+  top: 0;
+  transition: left 0.3s;
+  padding-top: 3rem;
+  z-index: 100;
+}
+.sidebar.open {
+  left: 0;
+}
+.sidebar ul { list-style: none; padding: 0; margin: 0; }
+.sidebar li {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #495057;
+}
+.sidebar li:hover {
+  background-color: #495057;
+}
+
+/* Topbar - stays full width, not shifting */
+.topbar {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* full width always */
+  z-index: 200;
+}
+.topbar h1 {
+  margin: 0;
+  flex-grow: 1;
+}
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+/* Topbar right section: country selector & weather */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between items */
+  margin-left: auto; /* push to right */
+}
+
+.topbar-right select {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.topbar-right span.weather {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+
+/* Content area */
+.content {
+  margin-top: 60px; /* leave space for fixed header */
+  padding: 1rem;
+  transition: margin-left 0.3s;
+}
+.content.shifted {
+  margin-left: 220px; /* push content only when menu open */
+}
+
+/* Articles */
+.articles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.article-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #f9f9f9;
+}
+
+/* Category buttons */
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.category-buttons button {
+  background: #f8f9fa;
+  border: 2px solid #007bff;
+  color: #007bff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px; /* pill shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-buttons button:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.category-buttons button:active {
+  transform: scale(0.96);
+}
+
+/* Optional - highlight active category */
+.category-buttons button.active {
+  background: #007bff;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}

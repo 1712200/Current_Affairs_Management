@@ -1,0 +1,120 @@
+/* --- Statistics Dashboard --- */
+.statistics-dashboard {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.statistics-dashboard h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #343a40;
+}
+
+/* --- Charts Grid --- */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.chart-container {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Modal Overlay --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* --- Modal Content --- */
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* --- Fade-in animation --- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Modal Title --- */
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #343a40;
+  text-align: center;
+}
+
+/* --- Article List --- */
+.modal-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-content li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* --- Close Buttons --- */
+.close-btn {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.5rem 1.2rem;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.close-btn:hover {
+  background-color: #c82333;
+}
+
+/* --- Cross (×) button on top-right --- */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #dc3545;
+}
+
+.modal-close:hover {
+  color: #a71d2a;
+}

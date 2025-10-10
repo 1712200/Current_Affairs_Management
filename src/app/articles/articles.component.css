@@ -1,0 +1,150 @@
+.articles-page {
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.articles-page h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #343a40;
+}
+
+.top-buttons {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.top-buttons button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.top-buttons button:hover {
+  background-color: #28a745;
+}
+
+.add-article-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  gap: 0.5rem;
+}
+
+.add-article-form input,
+.add-article-form textarea {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.add-article-form button {
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.add-article-form button:first-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.add-article-form button:last-child {
+  background-color: #dc3545;
+  color: white;
+}
+
+.search-bar {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 25px;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.article-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.article-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  color: #007bff;
+}
+
+.article-content p {
+  flex-grow: 1;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.article-content small {
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.article-content a {
+  text-decoration: none;
+  color: #28a745;
+  font-weight: 600;
+  transition: color 0.3s;
+  margin-bottom: 0.5rem;
+}
+
+.article-content a:hover {
+  color: #007bff;
+}
+
+.delete-btn {
+  align-self: flex-start;
+  padding: 0.3rem 0.8rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}

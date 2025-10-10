@@ -1,0 +1,54 @@
+.glossary-page {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.glossary-page h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #343a40;
+}
+
+.search-bar {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  width: 60%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 25px;
+}
+
+.glossary-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.glossary-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.glossary-card:hover {
+  transform: translateY(-5px);
+}
+
+.glossary-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #007bff;
+}
+
+.glossary-card p {
+  margin: 0;
+  color: #555;
+}

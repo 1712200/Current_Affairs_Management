@@ -1,0 +1,54 @@
+<!-- Sidebar -->
+<div class="sidebar" [class.open]="isMenuOpen">
+  <ul>
+    <li (click)="navigateTo('dashboard')">Dashboard</li>
+    <li (click)="navigateTo('articles')">Articles</li>
+    <li (click)="navigateTo('downloads')">Downloads</li>
+    <li (click)="navigateTo('glossary')">Glossary</li>
+    <li (click)="navigateTo('manage')">Manage</li>
+    <li (click)="navigateTo('users')">Users</li>
+    <li (click)="navigateTo('groups')">Groups</li>
+    <li (click)="navigateTo('statistics')">Statistics</li>
+  </ul>
+</div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <span class="menu-icon" (click)="toggleMenu()">&#9776;</span>
+  <h1>Current Affairs Dashboard</h1>
+
+  <!-- Right side elements -->
+  <div class="topbar-right">
+    <!-- Country selection -->
+    <select [(ngModel)]="selectedCountry" (change)="onCountryChange($event)">
+      <option value="in">India</option>
+      <option value="il">Israel</option>
+    </select>
+
+    <!-- Display selected country -->
+    <span class="country-display">
+      {{ selectedCountry === 'in' ? 'India' : 'Israel' }}
+    </span>
+
+    <!-- Weather -->
+    <span class="weather">
+      <img *ngIf="weatherIcon" [src]="weatherIcon" alt="Weather icon" class="weather-icon">
+      {{ weatherTemp }}°C
+    </span>
+  </div>
+</div>
+
+<!-- Content area -->
+<div class="content" [class.shifted]="isMenuOpen">
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Articles fallback -->
+<div class="articles-container" *ngIf="articles.length > 0">
+  <div class="article-card" *ngFor="let article of articles">
+    <h3 class="article-title">{{ article.title }}</h3>
+    <p class="article-description">{{ article.description }}</p>
+    <small class="article-date">{{ article.publishedAt | date:'medium' }}</small>
+    <a *ngIf="article.url" [href]="article.url" target="_blank" class="read-more">Read more</a>
+  </div>
+</div>

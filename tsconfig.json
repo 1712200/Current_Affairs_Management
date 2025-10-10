@@ -7,6 +7,11 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "my-news-lib": [
+        "./dist/my-news-lib"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "isolatedModules": true,
@@ -26,6 +31,13 @@
   "references": [
     {
       "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./projects/my-news-lib/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/my-news-lib/tsconfig.spec.json"
     }
   ]
+  
 }

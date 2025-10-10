@@ -1,0 +1,39 @@
+<div class="articles-page">
+  <h2>Explore Articles</h2>
+
+  <!-- Buttons -->
+  <div class="top-buttons">
+    <button (click)="showForm()">Write Article</button>
+    <button (click)="filteredArticles.set(articles())">All Articles</button>
+    <button (click)="filteredArticles.set(myArticles())">My Articles</button>
+  </div>
+
+  <!-- Add article form -->
+  <div class="add-article-form" *ngIf="showAddForm()">
+    <input type="text" placeholder="Title" [(ngModel)]="newArticle.title" />
+    <textarea placeholder="Description" [(ngModel)]="newArticle.description"></textarea>
+    <input type="text" placeholder="Category" [(ngModel)]="newArticle.category" />
+    <input type="text" placeholder="URL (optional)" [(ngModel)]="newArticle.url" />
+    <button (click)="addArticle()">Add Article</button>
+    <button (click)="hideForm()">Cancel</button>
+  </div>
+
+  <!-- Search bar -->
+  <div class="search-bar">
+    <input type="text" placeholder="Search articles..." [(ngModel)]="searchQuery" (input)="searchArticles()" />
+  </div>
+
+  <!-- Articles grid -->
+  <div class="articles-grid">
+    <div class="article-card" *ngFor="let article of filteredArticles()">
+      <img *ngIf="article.urlToImage" [src]="article.urlToImage" alt="Article Image" />
+      <div class="article-content">
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.description }}</p>
+        <small>Published at: {{ article.publishedAt | date:'medium' }}</small>
+        <a *ngIf="article.url" [href]="article.url" target="_blank">Read more</a>
+        <button *ngIf="myArticles().includes(article)" (click)="deleteMyArticle(filteredArticles().indexOf(article))" class="delete-btn">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

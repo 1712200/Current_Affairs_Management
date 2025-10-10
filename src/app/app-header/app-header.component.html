@@ -1,0 +1,15 @@
+<div class="topbar">
+  <span class="menu-icon" (click)="toggleMenu()">&#9776;</span>
+  <h1>Current Affairs Dashboard</h1>
+</div>
+
+<!-- Sidebar -->
+<div *ngIf="menuOpen" class="sidebar">
+  <button (click)="selectCategory('general')">All</button>
+  <button (click)="selectCategory('business')">Business</button>
+  <button (click)="selectCategory('technology')">Technology</button>
+  <button (click)="selectCategory('sports')">Sports</button>
+  <button (click)="selectCategory('health')">Health</button>
+  <button (click)="selectCategory('science')">Science</button>
+  <button (click)="selectCategory('entertainment')">Entertainment</button>
+</div>

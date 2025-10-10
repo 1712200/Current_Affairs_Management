@@ -1,0 +1,48 @@
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1rem 0;
+  justify-content: center;
+}
+
+.category-buttons button {
+  background: #f8f9fa;
+  border: 2px solid #007bff;
+  color: #007bff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px; /* pill shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-buttons button:hover {
+  background: #007bff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.category-buttons button:active {
+  transform: scale(0.96);
+}
+
+.category-buttons button.active {
+  background: #007bff;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+}
+
+.articles-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.article-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #f9f9f9;
+}

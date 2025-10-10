@@ -1,0 +1,77 @@
+<div class="statistics-dashboard">
+  <h2>Statistics Dashboard</h2>
+
+  <!-- Charts Grid -->
+  <div class="charts-grid">
+    <!-- Charts (same as before) -->
+    <div class="chart-container">
+      <canvas baseChart type="bar" [data]="categoryChartData" [options]="categoryChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="line" [data]="latestChartData" [options]="lineChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="doughnut" [data]="totalArticlesChartData" [options]="defaultChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="pie" [data]="activeAuthorsChartData" [options]="pieChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="bar" [data]="monthlyViewsChartData" [options]="defaultChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="radar" [data]="avgReadTimeChartData" [options]="defaultChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="doughnut" [data]="engagementRateChartData" [options]="defaultChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="polarArea" [data]="sentimentDistributionChartData" [options]="defaultChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="bubble" [data]="authorProductivityChartData" [options]="defaultChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="scatter" [data]="articleLengthChartData" [options]="articleLengthChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="bar" [data]="categoryImageChartData" [options]="categoryImageChartOptions"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <canvas baseChart type="radar" [data]="popularityIndexChartData" [options]="defaultChartOptions"></canvas>
+    </div>
+  </div>
+
+  <!-- Modal Popup for Selected Articles -->
+  <div class="modal-overlay" *ngIf="selectedCategoryArticles.length || selectedDateArticles.length || selectedAuthorArticles.length">
+    <div class="modal-content">
+      <!-- Cross button -->
+      <span class="modal-close" (click)="closeList()">×</span>
+
+      <h3>
+        {{ selectedCategory ? 'Category: ' + selectedCategory : '' }}
+        {{ selectedDate ? 'Date: ' + selectedDate : '' }}
+        {{ selectedAuthor ? 'Author: ' + selectedAuthor : '' }}
+      </h3>
+
+      <ul>
+        <li *ngFor="let article of selectedCategoryArticles.concat(selectedDateArticles, selectedAuthorArticles)">
+          <strong>{{ article.title }}</strong> — {{ article.author || 'Unknown' }}
+        </li>
+      </ul>
+
+      <button class="close-btn" (click)="closeList()">Close</button>
+    </div>
+  </div>
+</div>

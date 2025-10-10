@@ -1,0 +1,19 @@
+<!-- Category buttons -->
+<div class="category-buttons">
+  <button 
+    *ngFor="let cat of ['general', 'business', 'technology', 'sports', 'health', 'science', 'entertainment']" 
+    [class.active]="activeCategory === cat"
+    (click)="fetchNews(cat)">
+    {{ cat | titlecase }}
+  </button>
+</div>
+
+<!-- Articles -->
+<div class="articles-container">
+  <div class="article-card" *ngFor="let article of articles">
+    <h3 class="article-title">{{ article.title }}</h3>
+    <p class="article-description">{{ article.description }}</p>
+    <small class="article-date">{{ article.publishedAt | date:'medium' }}</small>
+    <a *ngIf="article.url" [href]="article.url" target="_blank" class="read-more">Read more</a>
+  </div>
+</div>

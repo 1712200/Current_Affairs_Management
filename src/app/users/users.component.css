@@ -1,0 +1,92 @@
+.users-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9ff; /* light pastel background */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #4a4a8c;
+}
+
+.error-message {
+  color: #d9534f;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.user-form, .users-table {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.form-row label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-row input {
+  padding: 8px 10px;
+  border: 1px solid #d1d1e0;
+  border-radius: 6px;
+  background-color: #f3f3ff;
+}
+
+.btn {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #a1caff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #7bb8ff;
+}
+
+.btn.cancel {
+  background-color: #f5a1a1;
+}
+
+.btn.cancel:hover {
+  background-color: #f07979;
+}
+
+.users-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.users-table th, .users-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.users-table th {
+  background-color: #e1e1ff;
+  color: #333;
+}
+
+.users-table tr:hover {
+  background-color: #f0f0ff;
+}

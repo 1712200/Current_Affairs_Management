@@ -1,0 +1,45 @@
+.affairs-manager {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.affair-card {
+  background-color: #ffd6a5; /* pastel orange */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.affair-card h3 {
+  margin: 0 0 5px 0;
+  color: #6a4c93; /* pastel purple */
+}
+
+.affair-card p {
+  margin: 3px 0;
+  color: #355070; /* pastel navy */
+}
+
+.affair-card a {
+  color: #ff7b7b; /* pastel red */
+  text-decoration: none;
+}
+
+.affair-card a:hover {
+  text-decoration: underline;
+}
+
+.affair-card button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #caffbf; /* pastel green */
+  color: #333;
+}
+
+.affair-card button:hover {
+  background-color: #9bf6ff; /* pastel cyan */
+}
