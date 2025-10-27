@@ -1,22 +1,23 @@
+// users.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface User {
-  id?: number; // optional now
+  id?: number;
   name: string;
   email: string;
-  mobile?: string;
-  department?: string;
-  role?: string;
-  work_location?: string;
+  mobile: string;
+  department: string;
+  role: string;
+  work_location: string;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
-  private apiUrl = 'http://localhost:3000/api/users';
+  private apiUrl = 'http://localhost:5000/api/users'; // ✅ adjust this to your backend route
 
   constructor(private http: HttpClient) {}
 
@@ -24,12 +25,12 @@ export class UsersService {
     return this.http.get<User[]>(this.apiUrl);
   }
 
-  addUser(user: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, user);
+  addUser(user: User): Observable<any> {
+    return this.http.post(this.apiUrl, user);
   }
 
-  updateUser(id: number, user: User): Observable<User> {
-    return this.http.put<User>(`${this.apiUrl}/${id}`, user);
+  updateUser(id: number, user: User): Observable<any> {
+    return this.http.put(`${this.apiUrl}/${id}`, user);
   }
 
   deleteUser(id: number): Observable<any> {
