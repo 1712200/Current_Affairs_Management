@@ -10,7 +10,7 @@
     "test": "ng test --watch=false"
   },
   "dependencies": {
-    "@angular/common": "20.3.3",
+    "@angular/common": "20.3.14",
     "@angular/core": "20.3.3",
     "@angular/forms": "20.3.3",
     "@angular/platform-browser": "20.3.3",
